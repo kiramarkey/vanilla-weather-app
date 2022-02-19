@@ -85,5 +85,6 @@ margin: 5px;
    text-align: center;
    display: block;
    color: #878787;
-   
+   padding: 0px;
+   line-height: 1;
 }

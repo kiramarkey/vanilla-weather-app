@@ -56,14 +56,6 @@
         <h1>
           <span id="yourLocation">Location </span>
         </h1>
-        <ul>
-          <li>
-            Friday
-          </li>
-          <li>
-            12:00
-          </li>
-        </ul> 
       </div>
 <!--CURRENT TEMP & WEATHER-->
     <div class="row">
@@ -82,14 +74,19 @@
 <!--CURRENT HUM/WIND/PRECIP-->
       <div class="col-6">
         <ul>
-          <li>
-            Humidity 0%
+          <li id="todayDay">
+            Friday
+          </li>
+          <li id="todayTime">
+            12:00
           </li>
           <li>
-            Wind 0km/h
+            Humidity 
+            <span id="todayHumid">0</span>%
           </li>
           <li>
-            Precipitation 0%
+            Wind
+            <span id="todayWind">0</span>km/h
           </li>
          </ul> 
       </div>
@@ -100,9 +97,9 @@
   <span class="footer-links">
     App developed by 
   <a href="https://www.linkedin.com/in/kiramarkey/">
-    Kira Markey</a> using 
+    Kira Markey</a><br>using 
   <a href="https://github.com/kiramarkey/vanilla-weather-app">
-    open-source code.</a>
+    open-source code</a>
   </span>
 	
 <!--END CONTAINER-->

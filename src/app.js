@@ -2,13 +2,19 @@ function showTemperature(response) {
   console.log(response.data.main.temp);
   let temperatureCurrent = Math.round(response.data.main.temp);
   let weatherCurrent = response.data.weather[0].description;
+  let humidityCurrent = Math.round(response.data.main.humidity);
+  let windCurrent = Math.round(response.data.wind.speed);
   let todayWeather = document.querySelector("#todayWeather");
   let todayTemp = document.querySelector("#todayTemp");
+  let todayHumid = document.querySelector("#todayHumid");
+  let todayWind = document.querySelector("#todayWind");
   let locationName = response.data.name;
   let currentCityName = document.querySelector("#yourLocation");
   currentCityName.innerHTML = `${locationName}`;
   todayTemp.innerHTML = `${temperatureCurrent}°C`;
   todayWeather.innerHTML = `${weatherCurrent}`;
+  todayHumid.innerHTML = `${humidityCurrent}`;
+  todayWind.innerHTML = `${windCurrent}`;
 }
 
 function showPosition(position) {
