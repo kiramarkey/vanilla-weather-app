@@ -49,3 +49,10 @@ h6 {
 .btn {
 margin: 5px;
 }
+.footer-links {
+   font-size: smaller; 
+   font-weight: bold;
+   font-family:monospace;
+   text-align: center;
+   display: block;
+}
