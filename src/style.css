@@ -52,6 +52,18 @@ h6 {
  border: 1px solid #dadde1;
  border-radius: 5px;
 }
+
+.today-temp {
+ font-size: 64px;
+ margin: 0 auto;
+ padding: 0px;
+ line-height: 1;
+}
+
+.today-weather {
+
+
+}
 .card-subtitle {
   margin-top: 10px;
 }
