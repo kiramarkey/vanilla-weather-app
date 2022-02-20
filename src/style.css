@@ -1,10 +1,12 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
-  margin: 10px;
+  margin: 50px;
   border: 10px;
   padding: 10px;
-  text-transform: capitalize;
+  background: radial-gradient(592px at 48.2% 50%, rgba(255, 255, 249, 0.6) 0%, rgb(160, 199, 254) 74.6%);
+  background-repeat: none;
 }
+
 
 h1 {
  color: #878787;
@@ -54,6 +56,8 @@ h6 {
  padding: 20px;
  border: 1px solid #dadde1;
  border-radius: 5px;
+ background-color: rgba(255, 255, 255, 0.6);
+ 
 }
 
 .today-temp {
@@ -61,15 +65,23 @@ h6 {
  margin: 0 auto;
  padding: 0px;
  line-height: 1;
+ 
+}
+.today-weather {
+  text-transform: capitalize;
+  margin: 0px;  
+  padding: 0px;
+  line-height: 1;
 }
 
-.card-subtitle {
-  margin-top: 10px;
+.bring-sweater {
+  font-size: x-small;
+  margin: 0px;
+  padding: 0px;
+  font-style: italic;
 }
-.card-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.bring-sweater::first-letter{
+  text-transform: uppercase;
 }
 .location-search {
   display: flex;
@@ -78,7 +90,10 @@ h6 {
    margin: 1px;
    
 }
-
+.second-column {
+  float:right;
+  
+}
 .weather-forecast {
   margin-top: 20px;
   text-align: center;

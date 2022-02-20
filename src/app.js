@@ -55,7 +55,7 @@ function displayForecast(response) {
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "808c19e6529a8e88aa3a25cb2fc5e160";
-  let units = "metric";
+  let units = "imperial";
   let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
   axios.get(apiURL).then(displayForecast);
 
@@ -88,12 +88,19 @@ function showTemperature(response) {
 
  getForecast(response.data.coord);
 
+ 
+  let bringSweater = document.querySelector("#bringSweater");
+  if (celciusTemp < 60) {
+    bringSweater.innerHTML = "Don't forget a sweater!";
+  }
+  else (bringSweater.innerHTML = "It's a lovely day!");
+
 }
 
 function showPosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
-  let units = "metric";
+  let units = "imperial";
   let apiKey = "808c19e6529a8e88aa3a25cb2fc5e160";
   let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
   let apiUrl = `${apiEndpoint}?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
@@ -107,7 +114,7 @@ function searchLocation(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#searchBar");
   let cityOutput = document.querySelector("#yourLocation");
-  let units = "metric";
+  let units = "imperial";
   let apiKey = "808c19e6529a8e88aa3a25cb2fc5e160";
   let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
   let apiUrl = `${apiEndpoint}?q=${cityInput.value}&appid=${apiKey}&units=${units}`;
@@ -132,6 +139,9 @@ function showDegCel(event) {
     let degSym = "°";
     todayTemp.innerHTML = `${convertBack}${degSym}`;
 }
+
+
+
 
 let celciusTemp = null;
 
