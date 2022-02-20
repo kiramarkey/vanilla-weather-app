@@ -25,6 +25,7 @@ function showTemperature(response) {
   let todayTemp = document.querySelector("#todayTemp");
   let todayHumid = document.querySelector("#todayHumid");
   let todayWind = document.querySelector("#todayWind");
+  let todayIcon = document.querySelector("#todayIcon");
   let locationName = response.data.name;
   let currentCityName = document.querySelector("#yourLocation");
   currentCityName.innerHTML = `${locationName}`;
@@ -33,6 +34,7 @@ function showTemperature(response) {
   todayHumid.innerHTML = `${humidityCurrent}`;
   todayWind.innerHTML = `${windCurrent}`;
   todayDay.innerHTML = formatDate(response.data.dt * 1000);
+  todayIcon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
 
 function showPosition(position) {
