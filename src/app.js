@@ -18,7 +18,7 @@ function displayForecast() {
   let forecastHTML =`<div class="row">`;
   let days = ["Thu", "Fri", "Sat", "Sun"];
   days.forEach(function(day) {
-forecastHTML = forecastHTML + 
+  forecastHTML = forecastHTML + 
     `    
     <div class="col-2">
       <div class="weather-forecast-date">
@@ -37,15 +37,20 @@ forecastHTML = forecastHTML +
     </div>
     `;
   })
-  
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-  
 }
 
+function getForecast(coordinates) {
+  let apiKey = "808c19e6529a8e88aa3a25cb2fc5e160";
+  let units = "metric";
+  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.long}&appid=${apiKey}&units=${units}`;
+  axios.get(apiURL).then(displayForecast);
+
+}
 
 function showTemperature(response) {
-  console.log(response.data.main.temp);
+  console.log(response.data);
   let temperatureCurrent = Math.round(response.data.main.temp);
   let weatherCurrent = response.data.weather[0].description;
   let humidityCurrent = Math.round(response.data.main.humidity);
@@ -59,7 +64,6 @@ function showTemperature(response) {
   let locationName = response.data.name;
   let currentCityName = document.querySelector("#yourLocation");
 
-  
   celciusTemp = response.data.main.temp;
 
   currentCityName.innerHTML = `${locationName}`;
@@ -69,6 +73,9 @@ function showTemperature(response) {
   todayWind.innerHTML = `${windCurrent}`;
   todayDay.innerHTML = formatDate(response.data.dt * 1000);
   todayIcon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+
+ getForecast(response.data.coords);
+
 }
 
 function showPosition(position) {
@@ -81,6 +88,7 @@ function showPosition(position) {
 
   axios.get(apiUrl).then(showTemperature);
 }
+
 navigator.geolocation.getCurrentPosition(showPosition);
 
 function searchLocation(event) {
@@ -115,9 +123,6 @@ function showDegCel(event) {
 
 let celciusTemp = null;
 
-
-displayForecast();
-
 let form = document.querySelector("form");
 form.addEventListener("submit", searchLocation);
 
@@ -126,3 +131,4 @@ degFar.addEventListener("click", showDegFar);
 
 let degCel = document.querySelector("#degCel");
 degCel.addEventListener("click", showDegCel);
+
