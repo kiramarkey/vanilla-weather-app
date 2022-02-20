@@ -78,6 +78,23 @@ h6 {
    margin: 1px;
    
 }
+
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.weather-forecast-date {
+  font-size: 16px;
+  font-weight: 500;
+}
+.weather-forecast-high {
+  font-weight: bold;
+  font-size: 12px;
+}
+.weather-forecast-low {
+ font-size: 12px;
+}
 .footer-links {
    font-size: smaller; 
    font-weight: bold;
