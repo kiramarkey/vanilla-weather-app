@@ -13,6 +13,36 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML =`<div class="row">`;
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+  days.forEach(function(day) {
+forecastHTML = forecastHTML + 
+    `    
+    <div class="col-2">
+      <div class="weather-forecast-date">
+        ${day}
+        <img src="http://openweathermap.org/img/wn/04d@2x.png" width="50">
+          <br>
+        <div class="weather-forecast-temp">
+          <span class="weather-forecast-high">
+            10°
+          </span>
+          <span class="weather-forecast-low">
+            | 5°
+          </span>  
+        </div>
+      </div>
+    </div>
+    `;
+  })
+  
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  
+}
+
 
 function showTemperature(response) {
   console.log(response.data.main.temp);
@@ -29,6 +59,7 @@ function showTemperature(response) {
   let locationName = response.data.name;
   let currentCityName = document.querySelector("#yourLocation");
 
+  
   celciusTemp = response.data.main.temp;
 
   currentCityName.innerHTML = `${locationName}`;
@@ -85,7 +116,7 @@ function showDegCel(event) {
 let celciusTemp = null;
 
 
-
+displayForecast();
 
 let form = document.querySelector("form");
 form.addEventListener("submit", searchLocation);
