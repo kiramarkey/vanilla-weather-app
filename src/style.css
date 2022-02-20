@@ -62,13 +62,6 @@ h6 {
  padding: 0px;
  line-height: 1;
 }
-.last-updated {
-    font-size: smaller;
-    
-}
-
-
-
 
 .card-subtitle {
   margin-top: 10px;
@@ -82,7 +75,8 @@ h6 {
   display: flex;
 }
 .btn {
-margin: 5px;
+   margin: 1px;
+   
 }
 .footer-links {
    font-size: smaller; 
