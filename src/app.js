@@ -28,8 +28,11 @@ function showTemperature(response) {
   let todayIcon = document.querySelector("#todayIcon");
   let locationName = response.data.name;
   let currentCityName = document.querySelector("#yourLocation");
+
+  celciusTemp = response.data.main.temp;
+
   currentCityName.innerHTML = `${locationName}`;
-  todayTemp.innerHTML = `${temperatureCurrent}°C`;
+  todayTemp.innerHTML = `${temperatureCurrent}°`;
   todayWeather.innerHTML = `${weatherCurrent}`;
   todayHumid.innerHTML = `${humidityCurrent}`;
   todayWind.innerHTML = `${windCurrent}`;
@@ -61,5 +64,34 @@ function searchLocation(event) {
 
   axios.get(apiUrl).then(showTemperature);
 }
+
+function showDegFar(event) {
+    event.preventDefault();
+    let todayTemp = document.querySelector("#todayTemp");
+    let fahrenheitTemp = (celciusTemp * 9) / 5 + 32;
+    let degSym = "°";
+    let conversion = Math.round(fahrenheitTemp);
+    todayTemp.innerHTML = `${conversion}${degSym}`;
+}
+
+function showDegCel(event) {
+    event.preventDefault();
+    let todayTemp = document.querySelector("#todayTemp");
+    let convertBack = Math.round(celciusTemp);
+    let degSym = "°";
+    todayTemp.innerHTML = `${convertBack}${degSym}`;
+}
+
+let celciusTemp = null;
+
+
+
+
 let form = document.querySelector("form");
 form.addEventListener("submit", searchLocation);
+
+let degFar = document.querySelector("#degFar");
+degFar.addEventListener("click", showDegFar);
+
+let degCel = document.querySelector("#degCel");
+degCel.addEventListener("click", showDegCel);
