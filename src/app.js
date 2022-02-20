@@ -42,9 +42,10 @@ function displayForecast() {
 }
 
 function getForecast(coordinates) {
+  console.log(coordinates);
   let apiKey = "808c19e6529a8e88aa3a25cb2fc5e160";
   let units = "metric";
-  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.long}&appid=${apiKey}&units=${units}`;
+  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
   axios.get(apiURL).then(displayForecast);
 
 }
@@ -74,7 +75,7 @@ function showTemperature(response) {
   todayDay.innerHTML = formatDate(response.data.dt * 1000);
   todayIcon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 
- getForecast(response.data.coords);
+ getForecast(response.data.coord);
 
 }
 
