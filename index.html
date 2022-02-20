@@ -60,23 +60,23 @@
 <!--CURRENT TEMP & WEATHER-->
     <div class="row">
       <div class="col-6">
-        <span 
-        id="todayTemp"
-        class="today-temp">
-          0°C</span>
-        <br>
         <span
         id="todayWeather"
         class="today-weather">
           Sunny
         </span>
+        <br>
+        <br>
+        <span 
+        id="todayTemp"
+        class="today-temp">
+          0°C
+        </span>
+        <br>
       </div>
 <!--CURRENT HUM/WIND/PRECIP-->
       <div class="col-6">
         <ul>
-          <li id="todayDay">
-            Friday
-          </li>
           <li>
             Humidity 
             <span id="todayHumid">0</span>%
@@ -85,13 +85,24 @@
             Wind
             <span id="todayWind">0</span>km/h
           </li>
+          <li>
+            <img src=""
+            id="todayIcon">
+          </li>
          </ul> 
       </div>
     </div>
     </div>
 <!--FOOTER-->
  <br><br>
-  <span class="footer-links">
+   <span class="footer-links">
+    Last updated:
+        <span 
+        id="todayDay"
+        class="today-weather">
+        Friday
+        </span>
+        <br>
     App developed by 
   <a href="https://www.linkedin.com/in/kiramarkey/">
     Kira Markey</a><br>using 

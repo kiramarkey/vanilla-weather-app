@@ -62,7 +62,10 @@ h6 {
  padding: 0px;
  line-height: 1;
 }
-
+.last-updated {
+    font-size: smaller;
+    
+}
 
 
 
