@@ -1,6 +1,6 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
-  margin: 30px;
+  margin: 10px;
   border: 10px;
   padding: 50px;
   background-color: #9DBFEF;
@@ -30,7 +30,7 @@ li {
 
 .weather-app {
   max-width: 400px;
-  margin: 30px auto;
+  margin: 0 auto;
   padding: 20px;
   border: 1px solid #dadde1;
   border-radius: 5px;
