@@ -30,8 +30,8 @@ li {
 
 .weather-app {
   max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
+  margin: 10px;
+  padding: 10px;
   border: 1px solid #dadde1;
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.60);
