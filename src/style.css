@@ -1,24 +1,23 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
-  margin: 50px;
+  margin: 30px;
   border: 10px;
-  padding: 10px;
-  background: radial-gradient(592px at 48.2% 50%, rgba(255, 255, 249, 0.6) 0%, rgb(160, 199, 254) 74.6%);
-  background-repeat: none;
+  padding: 50px;
+  background-color: #9DBFEF;
 }
-
 
 h1 {
  color: #878787;
- font-size: 30px;
- line-height: 34px;
+ font-size: 40px;
+ line-height: 1;
  font-weight: 100;
 }
+
 ul {
   margin: 0;
   padding: 0;
-  
 }
+
 li {
   list-style: none;
   color: #878787;
@@ -27,46 +26,25 @@ li {
   line-height: 20px;
   margin: 0;
   padding: 0;
-  
-}
-h5 {
-  color: white;
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  padding: 5px;
-  margin: 50px;
-  display: block;
-  text-align: center;
-  width: fit-content;
-  
-}
-h6 {
-  color: white;
-  background-color: rgba(0, 0, 0, 0.2);
-  display: block;
-  text-align: center;
-  padding: 5px;
-  border-radius: 10px;
-  width: fit-content;
 }
 
 .weather-app {
- max-width: 600px;
- margin: 30px auto;
- padding: 20px;
- border: 1px solid #dadde1;
- border-radius: 5px;
- background-color: rgba(255, 255, 255, 0.6);
- 
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #dadde1;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.60);
 }
 
 .today-temp {
- font-size: 64px;
- margin: 0 auto;
- padding: 0px;
- line-height: 1;
- 
+  font-size: 64px;
+  margin: 0 auto;
+  padding: 0px;
+  line-height: 1; 
+  
 }
+
 .today-weather {
   text-transform: capitalize;
   margin: 0px;  
@@ -80,20 +58,25 @@ h6 {
   padding: 0px;
   font-style: italic;
 }
+
 .bring-sweater::first-letter{
   text-transform: uppercase;
 }
+
 .location-search {
   display: flex;
 }
+
 .btn {
    margin: 1px;
-   
+}
+.first-column {
+  float: center;
 }
 .second-column {
-  float:right;
-  
+  float: right;
 }
+
 .weather-forecast {
   margin-top: 20px;
   text-align: center;
@@ -103,13 +86,16 @@ h6 {
   font-size: 16px;
   font-weight: 500;
 }
+
 .weather-forecast-high {
   font-weight: bold;
   font-size: 12px;
 }
+
 .weather-forecast-low {
- font-size: 12px;
+  font-size: 12px;
 }
+
 .footer-links {
    font-size: smaller; 
    font-weight: bold;
